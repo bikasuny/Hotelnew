@@ -8,6 +8,6 @@ namespace Hotel.Application.Services
 {
     public class HotelService
     {
-
+        // 
     }
 }
