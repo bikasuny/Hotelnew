@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Hotel.Application\Hotel.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -18,8 +18,8 @@ namespace Hotel.Core.Entities
         public string Stars {  get; set; }
 
 
-        public List<Rooms> rooms { get; set; }
+        public List<room> rooms { get; set; }
 
-        public List<BookedRooms>  BookedRooms { get; set; }
+        public List<BookedRoom>  BookedRooms { get; set; }
     }
 }

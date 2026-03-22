@@ -3,11 +3,9 @@
 namespace Hotel.Core.Entities
 {
     [Table("rooms")]
-    public class Rooms: BaseEntity
+    public class room: BaseEntity
     {
         public int MaxGuestAmount { get; set; }
-
-        
 
         public RoomType roomType { get; set; }
 

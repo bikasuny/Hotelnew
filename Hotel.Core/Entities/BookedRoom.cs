@@ -1,6 +1,6 @@
 ﻿namespace Hotel.Core.Entities
 {
-    public class BookedRooms: BaseEntity
+    public class BookedRoom: BaseEntity
     {
         public DateTime  checkin {  get; set; }
         public DateTime checkout { get; set; }

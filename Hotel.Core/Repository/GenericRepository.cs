@@ -1,5 +1,6 @@
 ﻿using Hotel.Core.DataContext;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Hotel.Core.Repository
 {
@@ -48,6 +49,16 @@ namespace Hotel.Core.Repository
         {
             _set.Update(entity);
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public bool Predicate(Func<T, bool> predicate) {
+        
+            return _set.Any(predicate);
+        }
+
+        public List<T> Filter(Func<T, bool> predicate)
+        {
+            return _set.Where(predicate).ToList();  
         }
     }
 }
