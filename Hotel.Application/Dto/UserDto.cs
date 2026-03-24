@@ -1,31 +1,29 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Hotel.Core.Entities
+namespace Hotel.Application.Dto
 {
-    [Table("Users")]
-    public class User: BaseEntity
+    public class UserDto
     {
-        [Required]
+        public int Id { get; set; }
+
         public required string Name { get; set; }
 
-        [Required]
         public required string Surname { get; set; }
 
-        [Required]
         public required string PersonalNumber { get; set; }
 
         public bool IsResident => PersonalNumber?.Length == 11;
 
         public string? Email { get; set; }
 
-        [Required]
         public required string PhoneNumber { get; set; }
 
         public string? Address { get; set; }
 
         public DateTime? BirthDate { get; set; }
-
-        public int BookedRoomId { get; set; }
     }
 }

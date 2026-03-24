@@ -1,7 +1,27 @@
+using Hotel.Application.Services;
 using Hotel.Core.DataContext;
+using Hotel.Core.Entities;
+using Hotel.Core.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<GenericRepository<User>>();
+
+builder.Services.AddScoped<CityService>();
+builder.Services.AddScoped<GenericRepository<City>>();
+
+builder.Services.AddScoped<RoomService>();
+builder.Services.AddScoped<GenericRepository<room>>();
+
+builder.Services.AddScoped<BookedRoomService>();
+builder.Services.AddScoped<GenericRepository<BookedRoom>>();
+
+builder.Services.AddScoped<HotelService>();
+builder.Services.AddScoped<GenericRepository<Hotel.Core.Entities.Hotel>>();
 
 builder.Services.AddDbContext<HotelDbContext>(i =>
 {
@@ -9,7 +29,6 @@ builder.Services.AddDbContext<HotelDbContext>(i =>
 });
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

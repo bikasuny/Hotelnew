@@ -60,5 +60,12 @@ namespace Hotel.Core.Repository
         {
             return _set.Where(predicate).ToList();  
         }
+
+        public async Task SaveChanges()
+        {
+            await _context.SaveChangesAsync();
+        }
+
+
     }
 }

@@ -6,5 +6,7 @@ namespace Hotel.Core.Entities
     {
         [Key]
         public int Id { get; set; }
+
+        public bool IsActive { get; set; } = true;
     }
 }
