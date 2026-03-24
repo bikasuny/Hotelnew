@@ -19,6 +19,6 @@ namespace Hotel.Core.Entities
         }
 
         public int HotelId { get; set; }
-        public Hotel hotel { get; set; }
+        public CityHotel hotel { get; set; }
     }
 }

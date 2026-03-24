@@ -13,11 +13,11 @@ namespace Hotel.Application.Services
 {
     public class HotelService
     {
-        private readonly GenericRepository<Hotel.Core.Entities.Hotel> _hotelService;
+        private readonly GenericRepository<CityHotel> _hotelService;
         private readonly ILogger<HotelService> _logger;
         private readonly IMapper _mapper;
 
-        public HotelService(GenericRepository<Hotel.Core.Entities.Hotel> hotelService, ILogger<HotelService> logger, IMapper mapper)
+        public HotelService(GenericRepository<CityHotel> hotelService, ILogger<HotelService> logger, IMapper mapper)
         {
             _hotelService = hotelService;
             _logger = logger;
@@ -32,7 +32,7 @@ namespace Hotel.Application.Services
 
             if (exists) throw new AccessViolationException("Such hotel already exists");
 
-            var mapped = _mapper.Map<Hotel.Core.Entities.Hotel>(req);
+            var mapped = _mapper.Map<CityHotel>(req);
             await _hotelService.AddAsync(mapped);
             _logger.LogInformation("hotel insert complete successfully");
         }

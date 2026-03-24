@@ -21,7 +21,7 @@ builder.Services.AddScoped<BookedRoomService>();
 builder.Services.AddScoped<GenericRepository<BookedRoom>>();
 
 builder.Services.AddScoped<HotelService>();
-builder.Services.AddScoped<GenericRepository<Hotel.Core.Entities.Hotel>>();
+builder.Services.AddScoped<GenericRepository<CityHotel>>();
 
 builder.Services.AddDbContext<HotelDbContext>(i =>
 {

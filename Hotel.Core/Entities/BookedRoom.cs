@@ -16,5 +16,6 @@ namespace Hotel.Core.Entities
 
         public int UserId { get; set; }
 
+        public int CityHotelId { get; set; }
     }
 }

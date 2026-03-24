@@ -12,6 +12,6 @@ namespace Hotel.Core.Entities
         public required string latitude { get; set; }
         public required string longitude { get; set; }
 
-        public List<Hotel>? hotels { get; set; }
+        public List<CityHotel>? hotels { get; set; }
     }
 }

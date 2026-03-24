@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Hotel.Core.Entities
 {
     [Table("hotels")]
-    public class Hotel: BaseEntity
+    public class CityHotel: BaseEntity
     {
         [Required]
         public required string Name { get; set; }
