@@ -8,6 +8,7 @@ namespace Hotel.Application.Dto
 {
     public class BookedRoomDto
     {
+        public string Name { get; set; }
         public DateTime checkin { get; set; }
         public DateTime checkout { get; set; }
 

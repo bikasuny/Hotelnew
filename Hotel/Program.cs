@@ -15,7 +15,7 @@ builder.Services.AddScoped<CityService>();
 builder.Services.AddScoped<GenericRepository<City>>();
 
 builder.Services.AddScoped<RoomService>();
-builder.Services.AddScoped<GenericRepository<room>>();
+builder.Services.AddScoped<GenericRepository<Room>>();
 
 builder.Services.AddScoped<BookedRoomService>();
 builder.Services.AddScoped<GenericRepository<BookedRoom>>();

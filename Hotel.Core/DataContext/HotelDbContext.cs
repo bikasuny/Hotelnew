@@ -11,7 +11,7 @@ namespace Hotel.Core.DataContext
 
         public DbSet<City> Cities { get; set; }
         public DbSet<CityHotel> hotels { get; set; }
-        public DbSet<room> rooms { get; set; }
+        public DbSet<Room> rooms { get; set; }
         public DbSet<User> users { get; set; }
 
     }

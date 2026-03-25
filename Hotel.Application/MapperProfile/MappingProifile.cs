@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Hotel.Application.Dto;
+using Hotel.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Hotel.Application.MapperProfile
         public MappingProifile() {
 
             CreateMap<City, CityDto>().ReverseMap();
-            CreateMap<Hotel, HotelDto>.ReverseMap();
+            CreateMap<CityHotel, HotelDto>().ReverseMap();
         }
     }
 }

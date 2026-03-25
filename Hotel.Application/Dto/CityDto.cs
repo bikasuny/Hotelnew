@@ -8,7 +8,7 @@ namespace Hotel.Application.Dto
 {
     public class CityDto
     {
-        public required string name {  get; set; }
+        public required string Name {  get; set; }
 
         public required string latitude { get; set; }
         public required string longitude { get; set; }

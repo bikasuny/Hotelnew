@@ -5,6 +5,7 @@ namespace Hotel.Core.Entities
     [Table("bookedRooms")]
     public class BookedRoom: BaseEntity
     {
+        public string Name { get; set; }
         public DateTime  checkin {  get; set; }
         public DateTime checkout { get; set; }
 

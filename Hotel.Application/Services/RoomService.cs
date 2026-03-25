@@ -13,14 +13,14 @@ namespace Hotel.Application.Services
 {
     public class RoomService
     {
-        private readonly GenericRepository<room> _roomService;
+        private readonly GenericRepository<Room> _roomService;
         private readonly ILogger<RoomService> _logger;
         private readonly IMapper _mapper;
 
 
 
 
-        public RoomService(GenericRepository<room> roomService, ILogger<RoomService> logger, IMapper mapper)
+        public RoomService(GenericRepository<Room> roomService, ILogger<RoomService> logger, IMapper mapper)
         {
             _roomService = roomService;
             _logger = logger;
@@ -35,7 +35,7 @@ namespace Hotel.Application.Services
 
             if (exists) throw new AccessViolationException("Such room already exists");
 
-            var mapped = _mapper.Map<room>(req);
+            var mapped = _mapper.Map<Room>(req);
             await _roomService.AddAsync(mapped);
             _logger.LogInformation("room insert complete successfully");
         }
@@ -58,7 +58,7 @@ namespace Hotel.Application.Services
 
         public async Task DeleteByName(string name)
         {
-            var room = GetCityByName(name);
+            var room = GetRoomByName(name);
             if (room == null)
             {
                 _logger.LogInformation("The city is null");

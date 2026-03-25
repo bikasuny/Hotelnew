@@ -7,7 +7,7 @@ namespace Hotel.Core.Entities
     public class City: BaseEntity
     {
         [Required]
-        public required string name { get; set; }
+        public required string Name { get; set; }
 
         public required string latitude { get; set; }
         public required string longitude { get; set; }
