@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Hotel.Application.Dto;
+using Hotel.Application.Services;
 using Hotel.Core.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,10 @@ namespace Hotel.Application.MapperProfile
 
             CreateMap<City, CityDto>().ReverseMap();
             CreateMap<CityHotel, HotelDto>().ReverseMap();
+            CreateMap<Room,  RoomDto>().ReverseMap();
+            CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<BookedRoom, BookedRoomDto>().ReverseMap();
+
         }
     }
 }

@@ -1,3 +1,4 @@
+using Hotel.Application.MapperProfile;
 using Hotel.Application.Services;
 using Hotel.Core.DataContext;
 using Hotel.Core.Entities;
@@ -28,6 +29,7 @@ builder.Services.AddDbContext<HotelDbContext>(i =>
     i.UseSqlServer(builder.Configuration.GetConnectionString("HotelDbContext"));
 });
 
+builder.Services.AddAutoMapper(typeof(MappingProifile));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
