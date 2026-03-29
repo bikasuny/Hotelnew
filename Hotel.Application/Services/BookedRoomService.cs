@@ -27,11 +27,11 @@ namespace Hotel.Application.Services
             _mapper = mapper;
         }
 
-        public async Task AddRoom(BookedRoomDto req)
+        public async Task AddBookedRoom(BookedRoomDto req)
         {
             _logger.LogInformation("Start logging data: {@bookedroom}", req);
             if (req == null) throw new ArgumentNullException("the request is null");
-            var exists = _bookedroomService.Predicate(i => i.Name == req.Name);
+            var exists = _bookedroomService.Predicate(i => i.Id == req.Id);
 
             if (exists) throw new AccessViolationException("Such room already exists");
 
@@ -49,16 +49,16 @@ namespace Hotel.Application.Services
             return mappedrooms;
         }
 
-        public async Task<BookedRoomDto> GetRoomByName(string name)
+        public async Task<BookedRoomDto> GetRoomById(int Id )
         {
-            var roomByName = _bookedroomService.Filter(i => i.Name == name).FirstOrDefault();
+            var roomByName = _bookedroomService.Filter(i => i.Id == Id).FirstOrDefault();
             var mapped = _mapper.Map<BookedRoomDto>(roomByName);
             return mapped;
         }
 
-        public async Task DeleteByName(string name)
+        public async Task DeleteById(int Id)
         {
-            var broom = GetRoomByName(name);
+            var broom = GetRoomById(Id);
             if (broom == null)
             {
                 _logger.LogInformation("The room is null");

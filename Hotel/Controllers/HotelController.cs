@@ -15,7 +15,7 @@ namespace Hotel.Controllers
             _hotelService = hotelService;
         }
 
-        [HttpPost("AddCity")]
+        [HttpPost("AddHotel")]
         public async Task<IActionResult> AddHotel(HotelDto req)
         {
             await _hotelService.AddHotel(req);

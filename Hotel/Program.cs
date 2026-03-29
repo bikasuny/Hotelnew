@@ -23,6 +23,17 @@ builder.Services.AddScoped<GenericRepository<BookedRoom>>();
 builder.Services.AddScoped<HotelService>();
 builder.Services.AddScoped<GenericRepository<CityHotel>>();
 
+//app.UseSwaggerUI(c =>
+//{
+//    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CSI_AuthprozationHelperV1");
+//});
+
+//builder.Services.AddSwaggerGen(c=>
+//{
+//    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "", Version = "v1" });
+    
+//    )
+//})
 builder.Services.AddDbContext<HotelDbContext>(i =>
 {
     i.UseSqlServer(builder.Configuration.GetConnectionString("HotelDbContext"));
@@ -49,3 +60,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+

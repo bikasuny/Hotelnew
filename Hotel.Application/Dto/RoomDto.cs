@@ -8,7 +8,7 @@ namespace Hotel.Application.Dto
 {
     public class RoomDto
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
         public int MaxGuestAmount { get; set; }
 
         public RoomType roomType { get; set; }
